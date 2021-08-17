@@ -30,6 +30,7 @@ for i, fl in enumerate(flist):
     t = f.Get("Events")
 
     ### xsecnorm reading
+    '''
     if 'TT_FCNC-T2ZJ_aTleptonic_ZToll_kappa_zut' in fl: xsecnorm = (0.0108/1042395)*35900
     elif 'TT_FCNC-T2ZJ_aTleptonic_ZToll_kappa_zct' in fl: xsecnorm = (0.00484/988009)*35900
     elif 'TT_FCNC-aT2ZJ_Tleptonic_ZToll_kappa_zut' in fl: xsecnorm = (0.0108/1046339)*35900
@@ -57,6 +58,7 @@ for i, fl in enumerate(flist):
     elif 'tZq_ll' in fl: xsecnorm = (0.0758/3618998)*35900
     elif 'ttHTobb' in fl: xsecnorm = (0.2934/3799066)*35900
     elif 'ttHToNonbb' in fl: xsecnorm = (0.2151/3905798)*35900
+    '''
 
     for evt in t:
         scaling = 0.
@@ -101,6 +103,7 @@ for i, fl in enumerate(flist):
                 print("genWeight is not exist. Set to 1")
                 genWeight = 1.
             else: genWeight = evt.genWeight
+            xsecnorm = evt.xsecNorm
             puWeight = evt.puWeight
             BtagWeight = evt.BtagWeight
             Lepton_SF = evt.Lepton_SF
